@@ -1,0 +1,8 @@
+function szamitas() {
+    let magassag = document.getElementById("magassag").value;
+    let suly = document.getElementById("suly").value;
+
+    let bmi = suly/(magassag*magassag) * 10000;
+
+    document.getElementById("eredmeny").innerHTML = "<br>A kapott BMI: "+ bmi +"";
+}
