@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div>
+        <label for="magassag">Magasság: </label>
+        <input type="number" min="130" value="160" id="magassag"> cm
+    </div>
+
+    <div>
+        <label for="suly">Súly: </label>
+        <input type="number" min="40" value="55" id="suly"> kg
+    </div>
+
+    <button onclick="szamitas()">BMI kiszámítása</button>
+    <div id="eredmeny"></div>
+</body>
+</html>
