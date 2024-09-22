@@ -1,0 +1,12 @@
+function szamitas() {
+    let year = document.getElementById("number").value;
+
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return document.getElementById("eredmeny").innerHTML = "<br> "+year+" is a leap year.";  
+    } else {
+    
+        return document.getElementById("eredmeny").innerHTML = "<br> "+year+" is not a leap year.";  
+    }
+
+    
+}
