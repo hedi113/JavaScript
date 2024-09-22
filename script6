@@ -1,0 +1,19 @@
+function getWinner() {
+
+    let player1 = document.getElementById("player1").value;
+    let player2 = document.getElementById("player2").value; 
+
+    if (player1 === player2) {
+        return document.getElementById("result").innerHTML = "<br> It's a tie";
+    }
+
+    if (
+        (player1 === 1 && player2 === 3) ||  // Rock beats Scissors
+        (player1 === 2 && player2 === 1) ||  // Paper beats Rock
+        (player1 === 3 && player2 === 2)     // Scissors beats Paper
+    ) {
+        return document.getElementById("result").innerHTML = "<br> Player 1 wins";
+    } else {
+        return document.getElementById("result").innerHTML = "<br> Player 2 wins";
+    }
+}
