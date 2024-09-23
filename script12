@@ -1,0 +1,19 @@
+function skip3() {
+    let divisibleByThreeCount = 0;  // To track how many numbers divisible by 3 have been encountered
+    let text = "";
+    for (let i = 1; i <= 100; i++) {
+    // Check if the number is divisible by 3
+    if (i % 3 === 0) {
+        divisibleByThreeCount++;  // Increment the count for divisible by 3 numbers
+        if(divisibleByThreeCount == 3) {
+            divisibleByThreeCount = 0;
+            continue;
+        }
+        
+    }
+
+
+    text += ""+i+"<br>";  // Print the number if it's not divisible by 3
+    }
+    document.getElementById("result").innerHTML = text;
+}
