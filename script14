@@ -1,0 +1,27 @@
+function fizzBuzz() {
+    let start = document.getElementById("start").value;
+    let end = document.getElementById("end").value;
+
+    let result = "";  
+    let num = start;  
+
+    while (num <= end) {
+        if (num % 3 === 0 && num % 5 === 0) {
+            result += "&nbsp;fizzbuzz";  
+        } else if (num % 3 === 0) {
+            result += "&nbsp;fizz";  
+        } else if (num % 5 === 0) {
+            result += "&nbsp;buzz";  
+        } else {
+            result += "&nbsp;" + num;  
+        }
+
+        if (num < end) {
+            result += ",&nbsp;";
+        }
+
+        num++;  
+    }
+
+    document.getElementById("result").innerHTML = result.trim();
+}
