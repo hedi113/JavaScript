@@ -1,0 +1,13 @@
+function printUntilNonLetter() {
+    var str = document.getElementById("input").value;
+    let text = "";
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        if (!/^[a-zA-Z]$/.test(char)===true) {
+            break;  
+        }
+        text += ""+char+"";
+
+    }
+    document.getElementById("result").innerHTML = text;   
+}
