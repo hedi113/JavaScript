@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script8.js"></script>
+</head>
+<body>
+    <div>
+        <label for="input">Enter a number to calculate its factorial:</label>
+        <input type="number" value="3" id="input"> 
+    </div>
+    <button onclick="factorial()">generate</button>
+    <p id="result"></p>
+</body>
