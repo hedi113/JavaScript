@@ -1,0 +1,16 @@
+function averageOfDigits() {
+    let number = document.getElementById("input").value;
+    let sum = 0;
+    let count = 0;
+
+    let numStr = number.toString();
+
+    for (let i = 0; i < numStr.length; i++) {
+        sum += parseInt(numStr[i]);  
+        count++;
+    }
+
+    let result = Math.round(sum / count);
+
+    document.getElementById("result").innerHTML = "The average of the digits of "+number+" is "+result+"";
+}
