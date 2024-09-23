@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script10.js"></script>
+</head>
+<body>
+    <div>
+        <label for="input">Please enter the chess table size: </label>
+        <input type="number" min="1" value="8" id="input"> 
+    </div>
+    <button onclick="drawChessBoard()">generate</button>
+    <p id="result"></p>
+</body>
+</html>
