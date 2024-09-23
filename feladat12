@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script12.js"></script>
+</head>
+<body>
+    <p>
+        Create a program that prints the numbers from 1 to 100 but not the dividable by 3 in the following order:
+        Rools:
+        first do not print the first number dividable by 3,
+        secondly do not print the second number dividable by 3,
+        thirdly do not print the third number dividable by 3, and so on.
+    </p>
+    <button onclick="skip3()">generate</button>
+    <p id="result"></p>
+</body>
+</html>
