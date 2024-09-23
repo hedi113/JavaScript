@@ -1,0 +1,21 @@
+function drawChessBoard() {
+
+    let size = document.getElementById("input").value;
+    let board = "";
+
+    for (let row = 0; row < size; row++) {
+        let line = "";
+
+        for (let col = 0; col < size; col++) {
+            if ((row + col) % 2 === 0) {
+                line += "&nbsp;&nbsp;";  
+            } else {
+                line += "%";  
+            }
+        }
+
+        board += line + "<br>";  
+    }
+
+    document.getElementById("result").innerHTML = board;
+}
