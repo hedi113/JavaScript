@@ -1,0 +1,18 @@
+function skip3() {
+    let divisibleByThreeCount = 0;  
+    let text = "";
+    for (let i = 1; i <= 100; i++) {
+    
+    if (i % 3 === 0) {
+        divisibleByThreeCount++;  
+        if(divisibleByThreeCount == 3) {
+            divisibleByThreeCount = 0;
+            continue;
+        }
+        
+    }
+
+    text += ""+i+"<br>";  
+    }
+    document.getElementById("result").innerHTML = text;
+}
