@@ -1,0 +1,10 @@
+function printWord() {
+    var str = document.getElementById("input").value;
+    let text = "";
+    for (let i = 0; i < str.length; i++) {
+        let letter = str[i];
+        text += ""+letter+" <br>";
+
+        document.getElementById("result").innerHTML = text; 
+    }
+}
