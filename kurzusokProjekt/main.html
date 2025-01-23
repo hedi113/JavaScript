@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>STUDENT</title>
+</head>
+<body>
+    <script src="fetchMethods.js">
+      let maxStdId = Math.max(studentIds);
+    </script>
+    <div>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'cs'), GetCourse()">Courses</button>
+            <button class="tablinks" onclick="openTab(event, 'st'), GetStudent()">Students</button>
+            <button class="tablinks" onclick="openTab(event, 'Addc')">Add course</button>
+            <button class="tablinks" onclick="openTab(event, 'Adds'), setMaxCourseId('studentCourse')">Add student</button>
+            <button class="tablinks" onclick="openTab(event, 'ed'), setMaxCourseId('courseToEdit'), setMaxCourseId('editStdCourse'), setMaxStudentId('stdToEdit')">Edit</button>
+            <button class="tablinks" onclick="openTab(event, 'del'), setMaxCourseId('courseToDelete'), setMaxStudentId('stdToDelete')">Delete</button>
+          </div>
+
+          <div id="cs" class="tabcontent">
+            <div id="cshere"></div>
+          </div>
+
+          <div id="st" class="tabcontent">
+            <div id="sthere"></div>
+          </div>
+          
+          <div id="Addc" class="tabcontent">
+            <h3>Add course to database</h3>
+            <label for="courseName">Course name: </label>
+            <input type="text" id="courseName" name="courseName">
+            <button id="courseAdd" onclick="AddCourse()">Add</button>
+          </div>
+
+        <div id="Adds" class="tabcontent">
+            <h3>Add student to database</h3>
+            <label for="studentName">Student's name: </label>
+            <input type="text" id="studentName" name="studentName"><br>
+
+            <label for="studentCourse">Course id: </label>
+            <input type="number" id="studentCourse" name="studentCourse" min=1>
+            <button id="studentCourseAdd" onclick="AddStudent()">Add</button>
+            <!-- <h3>Add student to course</h3>
+            <label for="addStdToCourse">Students's id: </label>
+            <input type="number" id="addStdToCourse" name="addStdToCourse"><br>
+            <label for="stdToThisCourse">Course's id: </label>
+            <input type="number" id="stdToThisCourse" name="stdToThisCourse">
+            <button onclick="">Add</button> -->
+        </div>
+
+        <div id="ed" class="tabcontent">
+            <h3>Edit course</h3>
+            <label for="courseToEdit">Course's id: </label>
+            <input type="number" id="courseToEdit" name="courseToEdit" min=1><br>
+            <label for="newCourseName">New course name: </label>
+            <input type="text" id="newCourseName" name="newCourseName">
+            <button onclick="EditCourse()">Edit</button>
+            <h3>Edit students</h3>
+            <label for="stdToEdit">Students's id: </label>
+            <input type="number" id="stdToEdit" name="stdToEdit" min=1><br>
+            <label for="editStdName">New student name: </label>
+            <input type="text" id="editStdName" name="editStdName"><br>
+            <label for="editStdCourse">New course id: </label>
+            <input type="number" id="editStdCourse" name="editStdCourse" min=1>
+            <button onclick="EditStudent()">Edit</button>
+        </div>
+        <div id="del" class="tabcontent">
+          <h3>Delete course</h3>
+          <label for="courseToDelete">Course's id: </label>
+          <input type="number" id="courseToDelete" name="courseToDelete" min=1>
+          <button onclick="DeleteCourse()">Delete</button>
+          <h3>Delete student</h3>
+          <label for="stdToDelete">Student's id: </label>
+          <input type="number" id="stdToDelete" name="stdToDelete" min=1>
+          <button onclick="DeleteStd()">Delete</button>
+        </div>
+</body>
+</html>
