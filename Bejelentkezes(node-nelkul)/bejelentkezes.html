@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="signIn()">Bejelentkezés</button>
+        <button onclick="register()">Regisztráció</button>
+        <p id="email">
+            Email cím: <input type="text" id="inputemail">
+        </p>
+        <p id="password1">
+            Jelszó: <input type="password" id="password1Input">
+        </p>
+        <p id="password2">
+            Jelszó: <input type="password" id="password2Input">
+        </p>
+        <button id="check">Ellenőrzés</button>
+        <div id="error"></div>
+    </div>
+
+    <script>
+        document.getElementById("email").style.visibility = "hidden";
+        document.getElementById("password1").style.visibility = "hidden";
+        document.getElementById("password2").style.visibility = "hidden";
+        document.getElementById("check").style.visibility = "hidden";
+        
+
+        function register() {
+            document.getElementById("email").style.visibility = "visible";
+            document.getElementById("password1").style.visibility = "visible";
+            document.getElementById("password2").style.visibility = "visible";
+            document.getElementById("check").style.visibility = "visible";
+            document.getElementById("check").addEventListener("click", ellenorzes1);
+        }
+
+        async function ellenorzes1() {
+            let email = document.getElementById("inputemail").value;
+            const passw1 = document.getElementById("password1Input").value;
+            const passw2 = document.getElementById("password2Input").value;
+
+            let errorMessages = [];
+
+            const validateEmail = (email) => {
+                return String(email)
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+            };
+
+            if (!validateEmail(email)) {
+                errorMessages.push("Nem jó az email!");
+            }
+
+            if (passw1 !== passw2) {
+                errorMessages.push("Nem egyeznek meg a jelszavak!");
+            }
+
+            if (errorMessages.length > 0) {
+                document.getElementById("error").innerHTML = "<p>" + errorMessages.join("</p><p>") + "</p>";
+            } else {
+                document.getElementById("error").innerHTML = "";
+                console.log("Minden helyes!");
+                
+                url = "http://localhost:3000/users";
+                body = { email, password: passw1 };
+
+                const res = await fetch(url, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body),
+                });
+
+                document.getElementById("error").innerHTML = "Sikeres regisztrálás!";
+            }
+
+        }
+
+        function signIn() {
+
+            document.getElementById("email").style.visibility = "visible";
+            document.getElementById("password1").style.visibility = "visible";
+            document.getElementById("password2").style.visibility = "hidden";
+            document.getElementById("check").style.visibility = "visible";
+            document.getElementById("check").addEventListener("click", ellenorzes2);
+        }
+
+        async function ellenorzes2() {
+            let email = document.getElementById("inputemail").value;
+            const passw1 = document.getElementById("password1Input").value;
+            let errorMessages = [];
+
+            const validateEmail = (email) => {
+                return String(email)
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+            };
+
+            if (!validateEmail(email)) {
+                errorMessages.push("Nem jó az email!");
+            }
+
+            if (errorMessages.length > 0) {
+                document.getElementById("error").innerHTML = "<p>" + errorMessages.join("</p><p>") + "</p>";
+            } else {
+                document.getElementById("error").innerHTML = "";
+
+                url = "http://localhost:3000/users";
+                const res = await fetch(url, {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" },
+                });
+               
+                const users = await res.json();
+
+                let user = users.find((user) => user.email === email);
+                if(user == undefined) {
+                    document.getElementById("error").innerHTML = "Nics felhasználó ilyen email címmel!";
+                }
+                else {
+                    const userPassword = user.password;
+                    if(userPassword !== passw1) {
+                        document.getElementById("error").innerHTML = "Helytelen jelszó!";
+                    } 
+                    else {
+                        document.getElementById("error").innerHTML = "Sikeres bejelentkezés!";
+                    }
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>
