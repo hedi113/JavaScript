@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            
+        }
+        .flex-container {
+            display: flex;
+            justify-content: center space-around;
+            flex-direction: column;
+            background-color: blue;
+            width: fit-content;
+            height: 85vw;
+        }
+        .container-2 {
+            background-color: green;
+            width: 70%;
+            padding: 20%;
+            height: auto;
+        }
+        header {
+            background-color: red;
+            width: 100%;
+            height: 70px;
+        }
+        .szurke {
+            width: 60px;
+            margin: 1.4vw 4vw 1.4vw 4vw;
+            padding: 10px;
+            height: 7px;
+            text-align: center;
+            background-color: grey;
+        }
+        .szurke:first-of-type {
+            margin-top: 6vw;
+        }
+        .reszek {
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            flex-direction: row;
+        }
+        .headerszurke {
+            background-color: grey;
+                        width: 60px;
+            margin: 1.4vw 4vw 1.4vw 4vw;
+            padding: 10px;
+            height: 7px;
+            text-align: center;
+            background-color: grey
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flex-container header">
+        <div class="headerszurke"></div>
+        <div class="headerszurke"></div>
+        <div class="headerszurke"></div>
+        <div class="headerszurke"></div>
+        </div>
+    </header>
+    <div class="container">
+    <div class="container reszek">
+        <div class="flex-container">
+            <div class="szurke"></div>
+            <div class="szurke"></div>
+            <div class="szurke"></div>
+            <div class="szurke"></div>
+            <div class="szurke"></div>
+            <div class="szurke"></div>
+        </div>
+    </div>
+    <div class="container-2">
+        <div></div>
+    </div>
+    </div>
+</body>
+</html>
