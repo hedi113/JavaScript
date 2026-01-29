@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Square.Views"
+             x:Class="Square.MainPage"
+             x:DataType="local:CounterViewModel">
+
+    <ScrollView>
+        <Grid Margin="20,35,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="+" Command="{Binding TopLeftButtonCommand}" TextColor="White" FontSize="Medium" WidthRequest="40" HeightRequest="40" Margin="0,0,100,100"></Button>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 10,0,0,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40"            
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count1}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,0,0,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40"
+                Margin="80,40,0,40"
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count2}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Button Command="{Binding TopRightButtonCommand}" Text="+" TextColor="White" FontSize="Medium" WidthRequest="40" HeightRequest="40" Margin="0,0,-260,100"></Button>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,10,0,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40"
+                Margin="160,40,0,40"
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count3}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,0,0,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40"
+                Margin="0,120,0,40"
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count4}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,0,0,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40"
+                Margin="80,120,0,40"
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count5}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,0,0,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40"
+                Margin="160,120,0,40"
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count6}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Button Command="{Binding BottomLeftButtonCommand}" Text="+" TextColor="White" FontSize="Medium" WidthRequest="40" HeightRequest="40" Margin="0,360,100,100"></Button>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,0,10,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40" 
+                Margin="0,200,0,40"           
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count7}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,0,0,0"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40" 
+                Margin="80,200,0,40"           
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count8}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+            <Button Command="{Binding BottomRightButtonCommand}" Text="+" TextColor="White" FontSize="Medium" WidthRequest="40" HeightRequest="40" Margin="0,360,-260,100"></Button>
+            <Border Stroke="#C49B33"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 0,0,0,10"
+                Background="#2B0B98"
+                HeightRequest="40"
+                WidthRequest="40" 
+                Margin="160,200,0,40"           
+                HorizontalOptions="Center">
+                <Label Text="{Binding Count9}" TextColor="White" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </Border>
+        </Grid>
+
+    </ScrollView>
+
+</ContentPage>
